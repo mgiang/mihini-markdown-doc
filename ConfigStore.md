@@ -21,15 +21,12 @@ The path of the elements is prefixed by the path '@sys.config'.
 In the Lua Shell you can access the configuration table thanks to the
 'agent.config' module:
 
-~~~~ {.theme: .Confluence; .brush: .java; .gutter: .false
-style="font-size:12px;"}
--- Load/retrieve the config module
-c = require 'agent.config'
--- print all config from the mediation sub category
-p(c.mediation)
--- assign a new parameter (de-activate mediation stuff)
-c.mediation.activate = false
-~~~~
+    -- Load/retrieve the config module
+    c = require 'agent.config'
+    -- print all config from the mediation sub category
+    p(c.mediation)
+    -- assign a new parameter (de-activate mediation stuff)
+    c.mediation.activate = false
 
 #### From the asset application:
 
