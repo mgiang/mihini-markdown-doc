@@ -1,7 +1,7 @@
 ConfigStore
 ======================
 
-### Access to the configuration
+## Access to the configuration
 
 The following configuration elements are accessible through different
 APIs/Protocols.
@@ -44,9 +44,9 @@ Most likely, user will need the following command:
     at+lua="c = require 'agent.config' ; c.network.bearer.GPRS= {apn='orange.fr', retry = 2 , retryperiod = 50}"
     OK
 
-# How does the Config Store works
+## How does the Config Store works
 
-## Default configuration
+#### Default configuration
 
 The ReadyAgent comes with a default configuration that can be altered
 and restored at any time. The default configuration of the ReadyAgent is
@@ -54,7 +54,7 @@ specified into the file **defaultconfig.lua** that comes with the
 ReadyAgent. The ReadyAgent must be redeployed (build/installed) in order
 to change the **defaultconfig.lua**.
 
-## Persisted configuration
+#### Persisted configuration
 
 In addition of the defaultconfig.lua it is possible to modify the
 ReadyAgent configuration at anytime.\
@@ -67,7 +67,7 @@ system. By default, the ConfigStore is stored into
 "./persist/ConfigStore" file, relative to the directory where the
 ReadyAgent is executed.
 
-## Configuration loading workflow
+#### Configuration loading workflow
 
 When the ReadyAgent starts it looks if it has an already stored
 configuration (ConfigStore). If it does not find one then (and only
@@ -82,7 +82,7 @@ The configuration tree is stored in persisted memory (flash). Any change
 to the configuration is written synchronously, meaning that the settings
 are persisted as soon as returning from a 'set' function.
 
-## ConfigStore API
+#### ConfigStore API
 
 The Configuration module has an API to manipulate the configuration
 store, in a lua shell you can type:
@@ -95,7 +95,7 @@ store, in a lua shell you can type:
 
 # List of configuration parameters that can be applied on the ReadyAgent
 
-## Agent generic settings
+#### Agent generic settings
 
 --Defines the local port on which the agent is listening in order to
 communicate with the assets\
@@ -123,7 +123,7 @@ receive LUASIGNAL from external applications (Linux only)\
 nil to disable\
  agent.persistsize = 20000 --max byte length
 
-## Server connection settings
+#### Server connection settings
 
 --URL on which the agent will try the server connection. This parameter
 is only relevant for HTTP transport protocol\
@@ -147,7 +147,7 @@ seconds) after some data has been given to the ReadyAgent before it
 connects to the server (connect will occur at maximum 10 seconds after
 some data has been written)
 
-## Mediation protocol settings
+#### Mediation protocol settings
 
 --Activate or de-activate the mediation client on the device\
  mediation.activate = true\
@@ -181,7 +181,7 @@ servers as dead\
 not set) is 1800 seconds (30 minutes)\
  mediation.retrydelay = 300
 
-## Shell related settings
+#### Shell related settings
 
 --Activate the Lua Shell\
  shell.activate = true\
@@ -195,7 +195,7 @@ address, by default shell accepts only localhost connection.\
 mode is wanted\
  shell.historysize = 30 -- only valid for edit mode
 
-## Time related settings
+#### Time related settings
 
 -- activate Time Services (see ntppolling config param): sync can be
 done on demand using synchronize API. \
@@ -221,7 +221,7 @@ timer.lua doc) \
 periodic time sync \
 time.ntppolling = 0
 
-## Modem configuration
+#### Modem configuration
 
 --activate\
  modem.activate = true\
@@ -235,7 +235,7 @@ time.ntppolling = 0
  --export sms api to assets\
  modem.sms = true
 
-## Network connectivity settings
+#### Network connectivity settings
 
 -- Activate / deactivate the NetworkManager\
  network.activate = true
@@ -304,7 +304,7 @@ address = "10.0.2.87", netmask = "255.255.0.0", broadcast =
 "10.0.255.255", gateway= "10.0.0.254", nameserver1 = "10.6.0.224",
 nameserver2 = "10.6.0.225"}
 
-## Device Management and monitoring settings
+#### Device Management and monitoring settings
 
 --Device Management and monitoring settings\
  --Activate the Device Management module\
@@ -313,7 +313,7 @@ nameserver2 = "10.6.0.225"}
 ServerAppSide for the TCPRemoteConnect command\
  --device.tcprconnect ={addr = '10.41.51.50', port = 2065 }
 
-## Logging framework
+#### Logging framework
 
 --default log level: can be one of NONE, ERROR, INFO, DETAIL, DEBUG,
 ALL. See log.lua for details\
@@ -360,7 +360,7 @@ param to flashmaxsize\
 --log.policy.ftpuser = ""\
 --log.policy.ftppwd = ""
 
-## Update framework
+#### Update framework
 
 --Update module settings\
 --Activate the Update Agent\
@@ -383,14 +383,14 @@ appcon.activate = false\
 (4242)\
 --appcon.port = 4243
 
-## Monitoring system
+#### Monitoring system
 
 – activate the monitoring\
  monitoring.activate = true\
  – gives access to the global environment into the monitoring scripts\
  monitoring.debug = true
 
-## Lua RPC server
+#### Lua RPC server
 
 – activate LuaRPC server\
  rpc.activate = true\
@@ -401,7 +401,7 @@ value is 'localhost'\
 is 1999\
  rpc.port = 1999
 
-## Data queues
+#### Data queues
 
 – activate Data queues\
  data.activate = true\
