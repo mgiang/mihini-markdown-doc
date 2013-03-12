@@ -97,26 +97,26 @@ store, in a lua shell you can type:
 
 #### Agent generic settings
 
---Defines the local port on which the agent is listening in order to communicate with the assets
-agent.assetport = 9999
-
---Address on which the agent is accepting connection in order to communicate with the assets
---Pattern is accepted: can be set to "\*" to accept connection from any address, by default shell accepts only localhost connection.
-agent.assetaddress = "\*"
-
---Devices ID used to communicate with the platform server
-agent.deviceId = "012345678901234"
-
---Device type, for example to be used in Update before accepting an update.
---Not used on Open AT for now.
-agent.devicetype= ""
-
---Defines the local port on which the agent is listening in order to receive LUASIGNAL from external applications (Linux only)
-agent.signalport = 18888
-
---Persistence options
-agent.persistlatency = 60 --latency before data persistence in seconds,nil to disable
-agent.persistsize = 20000 --max byte length
+    --Defines the local port on which the agent is listening in order to communicate with the assets
+    agent.assetport = 9999
+    
+    --Address on which the agent is accepting connection in order to communicate with the assets
+    --Pattern is accepted: can be set to "\*" to accept connection from any address, by default shell accepts only localhost connection.
+    agent.assetaddress = "\*"
+    
+    --Devices ID used to communicate with the platform server
+    agent.deviceId = "012345678901234"
+    
+    --Device type, for example to be used in Update before accepting an update.
+    --Not used on Open AT for now.
+    agent.devicetype= ""
+    
+    --Defines the local port on which the agent is listening in order to receive LUASIGNAL from external applications (Linux only)
+    agent.signalport = 18888
+    
+    --Persistence options
+    agent.persistlatency = 60 --latency before data persistence in seconds,nil to disable
+    agent.persistsize = 20000 --max byte length
 
 #### Server connection settings
 
