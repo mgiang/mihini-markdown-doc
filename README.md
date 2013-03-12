@@ -127,7 +127,9 @@ You should see the logs of the Mihini Agent, something similar to:
     2013-03-12 16:14:48 GENERAL-INFO: Module [Update] initialized
     2013-03-12 16:14:48 GENERAL-INFO: ReadyAgent successfully initialized
 
-**Note**: According to the version you downloaded and you built the header of the Agent might change (it includes version, git revision)
+**NOTE**
+
+According to the version you downloaded and you built the header of the Agent might change (it includes version, git revision)
 
 #### Mihini Agent shell
 
