@@ -97,14 +97,15 @@ store, in a lua shell you can type:
 
 #### Agent generic settings
 
---Defines the local port on which the agent is listening in order to
-communicate with the assets
+--Defines the local port on which the agent is listening in order to communicate with the assets
+
 agent.assetport = 9999
 
- --Address on which the agent is accepting connection in order to
-communicate with the assets
- --Pattern is accepted: can be set to "\*" to accept connection from any
-address, by default shell accepts only localhost connection.
+--Address on which the agent is accepting connection in order to communicate with the assets
+
+--Pattern is accepted: can be set to "\*" to accept connection from any address, by default shell accepts only 
+localhost connection.
+
  --agent.assetaddress = "\*"
 
 --Devices ID used to communicate with the platform server
