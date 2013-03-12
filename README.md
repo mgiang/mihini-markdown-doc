@@ -70,7 +70,7 @@ Build
   Output files are produced on working\_dir/build.$target folder, with
   $target equals to target specified in build.sh -t argument.
 
-        ReadyAgentSources/bin/build.sh [-d] [-t <target>]
+        MihiniAgentSources/bin/build.sh [-d] [-t <target>]
 
   Use `-d` to toggle debugging on
 
@@ -87,7 +87,7 @@ additional cross compiling toolchains.
 
 - build.$target/runtime : the runtime folder contains all Mihini Agent artifacts that need to be integrated in the target device.
 - build.$target/runtime/lib contains the libs you may need to link
-  with when developing an application that works with ReadyAgent, like:
+  with when developing an application that works with the Mihini Agent, like:
    - libSwi\_AirVantage.so
    - libSwi\_Sms.so
    - libSwi\_System.so
