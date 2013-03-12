@@ -1,9 +1,7 @@
-Platform : ConfigStore
+ConfigStore
 ======================
 
-This page last changed on Mar 06, 2013 by cbugot.
-
-## Access to the configuration
+### Access to the configuration
 
 The following configuration elements are accessible through different
 APIs/Protocols.
