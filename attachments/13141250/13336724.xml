@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<models xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.anyware-tech.com/platform/schema/model" xsi:schemaLocation="http://www.anyware-tech.com/platform/schema/model http://www.anyware-tech.com/platform/schema/model-1.0.xsd">
+    <manufacturer-model model-name="Q2687_inline" customer-path="/Wavecom">
+    <communication period="5000">
+      <protocols>
+        <oma-dm version="1.2" authentication-type="hmac" bootstrap-type="wap" use-encoding="true" use-next-nonce-per-package="true" />
+        <fota download-method="inline">
+                    <firmware-version-node>./DevDetail/FwV</firmware-version-node>
+                    <firmware-update-node>./FwUpdate</firmware-update-node>
+		    <firmware-update-download-node>./FwUpdate/Update/PkgData</firmware-update-download-node>
+		    <firmware-update-exec-node>./FwUpdate/Update</firmware-update-exec-node>
+                    <firmware-update-status-node>./FwUpdate/State</firmware-update-status-node>
+        </fota>
+      </protocols>
+    </communication>
+  </manufacturer-model>
+</models>

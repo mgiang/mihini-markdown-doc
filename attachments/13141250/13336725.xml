@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<models xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.anyware-tech.com/platform/schema/model" xsi:schemaLocation="http://www.anyware-tech.com/platform/schema/model http://www.anyware-tech.com/platform/schema/model-1.0.xsd">
+  <customer-model model-name="customerModelLaurent_alternate" customer-path="/Anyware">
+    <manufacturer-model-ref model-name="Q2687_alternate" customer-path="/Wavecom"></manufacturer-model-ref>
+    <communication>
+      <protocols>
+        <oma-dm send-bootstrap="true" use-oma-notification-security="false"></oma-dm>
+        <fota>
+          <software-node>./DevDetail/SwV</software-node>
+        </fota>
+      </protocols>
+    </communication>
+  </customer-model>
+</models>
