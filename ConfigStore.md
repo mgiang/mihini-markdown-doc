@@ -3,19 +3,19 @@ Platform : ConfigStore
 
 This page last changed on Mar 06, 2013 by cbugot.
 
-# Access to the configuration
+## Access to the configuration
 
 The following configuration elements are accessible through different
 APIs/Protocols.
 
-## From the Server through M3DA
+#### From the Server through M3DA
 
 The configuration table can be read (M3DA Command *ReadNode*) and
 written (Data writing).
 
 The path of the elements is prefixed by the path '@sys.config'.
 
-## From The Lua Shell:
+#### From The Lua Shell:
 
 In the Lua Shell you can access the configuration table thanks to the
 'agent.config' module:
@@ -27,7 +27,7 @@ In the Lua Shell you can access the configuration table thanks to the
     -- assign a new parameter (de-activate mediation stuff)
     c.mediation.activate = false
 
-## From the asset application:
+#### From the asset application:
 
 See DeviceTree library API. A couple of function for setting and reading
 variables are provided.\
@@ -41,7 +41,7 @@ Most likely, user will need the following command:
     :dt.get("config")
     -- user may append strings after config in order to browse deeper into the tree, e.g. ":dt.get("config.server.autoconnect")"
 
-## From AT Shell (OpenAT Only)
+#### From AT Shell (OpenAT Only)
 
     at+lua="c = require 'agent.config' ; c.network.bearer.GPRS= {apn='orange.fr', retry = 2 , retryperiod = 50}"
     OK
