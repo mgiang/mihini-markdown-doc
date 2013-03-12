@@ -120,26 +120,21 @@ store, in a lua shell you can type:
 
 #### Server connection settings
 
---URL on which the agent will try the server connection. This parameter
-is only relevant for HTTP transport protocol\
- server.url = "http://m2mop.net/device/com"
-
---When the device is behind a proxy this settings defines a HTTP proxy.
-This parameter is only relevant for HTTP transport protocol\
- --server.proxy must be a URL starting by "http://".\
- server.proxy = "some.proxy.server"
-
---Agent auto connection policy\
- server.autoconnect = {}\
- --server.autoconnect.onboot = true -- connect a few seconds after the
-ReadyAgent started\
- --server.autoconnect.period = 5 -- period in minute (connect every 5
-minutes)\
- --server.autoconnect.cron = "0 0 \* \* \*" -- cron entry (connect once
-a day at midnight)\
- server.autoconnect.ondemand = 10 -- latency before connection (in
-seconds) after some data has been given to the ReadyAgent before it
-connects to the server (connect will occur at maximum 10 seconds after
+    --URL on which the agent will try the server connection. This parameter is only relevant for HTTP transport protocol
+    server.url = "http://m2mop.net/device/com"
+    
+    --When the device is behind a proxy this settings defines a HTTP proxy.
+    -- This parameter is only relevant for HTTP transport protocol
+    --server.proxy must be a URL starting by "http://".\
+    server.proxy = "some.proxy.server"
+    
+    --Agent auto connection policy
+    server.autoconnect = {}
+    --server.autoconnect.onboot = true -- connect a few seconds after the agent started
+    --server.autoconnect.period = 5 -- period in minute (connect every 5 minutes)
+    --server.autoconnect.cron = "0 0 \* \* \*" -- cron entry (connect once a day at midnight)
+    server.autoconnect.ondemand = 10 -- latency before connection (inseconds) after some data has been given to 
+the ReadyAgent before it connects to the server (connect will occur at maximum 10 seconds after
 some data has been written)
 
 #### Mediation protocol settings
