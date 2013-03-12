@@ -93,7 +93,7 @@ store, in a lua shell you can type:
     agent.config.set(path, value)-- set a value in the configuration
     agent.config.get(path)       -- gets a value for the configuration subtree
 
-## List of configuration parameters that can be applied on the ReadyAgent
+## Configuration parameters that can be applied to Mihini
 
 #### Agent generic settings
 
