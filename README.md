@@ -31,14 +31,14 @@ in the base system (development files included)
 Configure build system
 ======================
 
-From this point in this document, we'll use MihiniAgentSources as the
+From now on, we'll use MihiniAgentSources as the
 root directory of Mihini agent sources. It must contains folders like
 "bin", "cmake", "luafmk", "agent" etc.
 
-MihiniAgentSources/cmake folder contains toolchains files (named
+MihiniAgentSources/cmake folder contain toolchain files (named
 toolchain.\*) along with other files (but don't pay attention at other
-files in cmake folder).\
- Each toolchain file defines a configuration for compiling the sources:
+files in cmake folder).
+Each toolchain file describes a set of tools to compile sources for a given target:
 
 - (cross-)compiler configuration (most important ones)
 
@@ -49,24 +49,23 @@ files in cmake folder).\
 
 - other build options related to Mihini Agent integration (those are more likely to be used for fine tuning a Mihini Agent integration, after it is already compiled and running)
 
-It may also be interesting to make your own toolchains files to adapt
-the build to your specific environment.
+you may want to write your own toolchain file, to handle the specifics of your environment.
 
 **WARNING**
 
-- We strongly recommand you to use a the toolchain that was generated
+- We strongly recommend that you use a the toolchain that was generated
   while creating the kernel/rootfs of the Linux system running on your
   device !
-- When compiling on 'regular' personal computer, gcc compiler provided
-  by "build-essential"-like package works out of the box for compiling
-  the agent, as a result toolchain.default.cmake is almost empty!
+- When not cross compiling (the executable is intended to run on the compiling PC), 
+  the "build-essential" package or its equivalent provides most of what's needed; 
+  as a result, toolchain.default.cmake is almost empty.
 
 Build
 =====
     
 #### Build the software
 
-- It is strongly advised to run next line outside from MihiniAgentSources folder
+- You are strongly advised to run next line outside from MihiniAgentSources folder
   Output files are produced on working\_dir/build.$target folder, with
   $target equals to target specified in build.sh -t argument.
 
@@ -92,7 +91,7 @@ additional cross compiling toolchains.
    - libSwi\_Sms.so
    - libSwi\_System.so
    - ...
-
+- build.$target/runtime/lua contains the lua packages and the lua native libs used by the agent
 - other files and folders in build.$target folder are CMake artifacts,
   don't modify them, you shouldn't need to look at them.
 
@@ -129,7 +128,7 @@ You should see the logs of the Mihini Agent, something similar to:
 
 **NOTE**
 
-According to the version you downloaded and you built the header of the Agent might change (it includes version, git revision)
+According to the version you downloaded and you built, the header of the Agent might change (it includes version, git revision)
 
 #### Mihini Agent shell
 
@@ -138,8 +137,8 @@ You can interact with the Mihini Agent by connecting to the Lua shell.
 
     $ telnet localhost
 
-Once connected to the shell you can send commands.
-Example, you can change a Mihini Agent config parameter:
+Once connected to the shell, you can execute Lua instructions. 
+For instance, you can change a Mihini Agent config parameter:
 
     $ telnet localhost
     Trying 127.0.0.1...
